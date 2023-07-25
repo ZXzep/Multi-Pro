@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Lab 3 Vue Model</title>
+</head>
+<body>
+    <div id="app">
+        Hello bro {{ sitename }}
+        <div :title="sitename">Hi</div>
+        <input type="text" v-model="sitename" name="" placeholder="site title"><br>
+    
+        <img :src="`https://via.placeholder.com/${img_width}x${img_height}`" class="">
+        <input type="number" min="100" max="1000" v-model="img_width" placeholder="width">
+        <input type="number" min="100" max="1000" v-model="img_height" placeholder="height">
+        <div onclick="vue.img_width = 200;vue.img_height = 200">จตุรัส</div>
+        <div onclick="vue.img_width = 200;vue.img_height = 100">แนวนอน</div>
+        <div onclick="vue.img_width = 100;vue.img_height = 200">แนวตั้ง</div>
+    </div>
+    <script type="text/javascript">
+        let vue = new Vue({
+            el:'#app',
+            data:{
+                sitename:'ITKMITL',
+                img:'https://via.placeholder.com/100x100',
+                img_width:100,
+                img_height:100
+            }
+        })
+    </script>
+</body>
+</html>
