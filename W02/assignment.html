@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 10px;
+        background: #0b0b0d;
+        font-family: 'Bebas Neue', sans-serif;
+        align-items: center;
+    }
+    #spdm{
+        font-size: 60px;
+        top: 30%;
+    }
+    #atsv{
+        font-size: 28px;
+        top: 25%;
+    }
+    #grid-child-2{
+        background-image: url(https://charts-static.billboard.com/img/2013/08/metro-boomin-nxb-344x344.jpg);
+        background-size: cover;
+    }
+    #main-singer{
+        font-size: 80px;
+        margin-left: auto;
+        margin-right: auto;
+        top: 15%;
+    }
+    #grid-child-4{
+        background-image: url(https://media.pitchfork.com/photos/6479dbcfc789a3a5fc5f44ed/1:1/w_600/Metro-Boomin-Spider-Man.jpg);
+        background-size: cover;
+    }
+    #songname{
+        font-size: 100px;
+        top: 22%;
+    }
+    #feat{
+        font-size: 17px;
+        top: 12%;
+    }
+    #grid-child-6{
+        background-image: url(https://cdn.discordapp.com/attachments/1138320032481431602/1138332361025658931/spider-man-across-the-spider-verse-miles-morales-gwen-stacy-header_1.png);
+        background-size: cover;
+    }
+    /* #grid-child-7{
+        background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/1982px-Spotify_icon.svg.png);
+        background-size: cover;
+    } */
+    #music{
+        position: relative;
+        align-items: center;
+        top: 20%;
+        margin-left: auto;
+        margin-right: auto;
+        color: black;
+    }
+    #chorus{
+        font-size: 50px;
+        top: 5%;
+    }
+    #lyric{
+        font-size: 17px;
+        text-align: left;
+        top: 10%;
+        left: 12%;
+    }
+    #grid-child-9{
+        background-image: url(https://cdn.discordapp.com/attachments/1138320032481431602/1138320102312378408/couple.jpg);
+        background-size: cover;
+    }
+    .grid-child{
+        box-shadow: 0px 0px 0px 2px #f4143c;
+        background: #f4143c;
+        color: black;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+    }
+    .grid-parent{
+        display: grid;
+        grid-template-columns: repeat(3, 300px);
+        grid-template-rows: repeat(3, 300px);
+        gap: 15px;
+        position: relative;
+        justify-content: center;
+    }
+    .text{
+        position: relative;
+    }
+</style>
+<body>
+    <div class="grid-parent">
+        <div id="grid-child-1" class="grid-child">
+            <div id="spdm" class="text">Spider-Man</div>
+            <div id="atsv" class="text">Across the Spider-Verse</div>
+        </div>
+        <div id="grid-child-2" class="grid-child"></div>
+        <div id="grid-child-3" class="grid-child">
+            <div id="main-singer" class="text">Metro Boomin</div>
+        </div>
+        <div id="grid-child-4" class="grid-child"></div>
+        <div id="grid-child-5" class="grid-child">
+            <div id="songname" class="text">Calling</div>
+            <div id="feat" class="text">feat. NAV, A Boogie wit da Hoodie, Swae Lee</div>
+        </div>
+        <div id="grid-child-6" class="grid-child"></div>
+        <div id="grid-child-7" class="grid-child">
+            <audio controls autoplay>
+                <source id="music" src="calling.mp3" type="audio/mp3">
+            </audio>
+        </div>
+        <div id="grid-child-8" class="grid-child">
+            <div id="chorus" class="text">Chorus</div>
+            <div id="lyric" class="text">I can hear you screamin' out, callin' me<br>
+                It's my fault, made you fall for me <br>
+                So, to save you, I'd give my all <br>
+                Just to save you, I'd give all of me <br>
+                I can hear you screamin' out, callin' me <br>
+                It's my fault, made you fall for me <br>
+                So, to save you, I'd give my all</div></div>
+        <div id="grid-child-9" class="grid-child">
+
+        </div>
+    </div>
+</body>
+</html>

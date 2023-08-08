@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0rem;
+        background: linear-gradient(to bottom right, #39f, #36c);
+        min-height: 100vh;
+        width: 100%;
+    }
+    .grid-child{
+        box-shadow: 0px 0px 10px red;
+        background: yellow;
+    }
+    .grid-parent{
+        display: grid;
+        grid-template-columns: 200px auto;
+        grid-auto-rows: 1fr;
+    }
+</style>
+<body>
+    <div class="grid-parent">
+        <div class="grid-child"></div>
+        <div class="grid-child"></div>
+        <div class="grid-child"></div>
+        <div class="grid-child">Lorem ipsum dolor sit amet 
+            consectetur adipisicing elit. Quia aut et 
+            blanditiis nihil magnam provident ratione sit 
+            corrupti ex omnis deserunt, quas quis minus 
+            corporis? Iste, perspiciatis repudiandae? Ab, 
+            dignissimos?</div>
+        <div class="grid-child"></div>
+        <div class="grid-child"></div>
+        <div class="grid-child"></div>
+        <div class="grid-child"></div>
+        <div class="grid-child"></div>
+    </div>
+</body>
+</html>
