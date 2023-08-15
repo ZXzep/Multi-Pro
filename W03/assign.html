@@ -5,16 +5,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<style type="text/css">
+	<style type="text/css" lang="css">
 		body{
 			margin: 0;
 			font-family: sans-serif;
-			background: #191414;
+			background: #121212;
 		}
 		*{
 			box-sizing: border-box;
 		}
 		.container{
+			
 			width: 100%;
 			padding: 0;
 			max-width: 1200px;
@@ -30,7 +31,7 @@
 		header{
 			background: #1DB954;
 			padding: 1rem 0;
-			color: #191414;
+			color: #121212;
 			font-weight: bold;
 			font-size: 1.2rem;
 		}
@@ -41,45 +42,15 @@
 		}
 		footer{
 			background: #1DB954;
-			/* padding: 3rem 0; */
-			color: #191414;
+			padding: 1rem 0;
+			color: #121212;
 			font-weight: bold;
 			font-size: 1.2rem;
 		}
-		/* @media (width<=1180px){
-			.container{
-				max-width: 820px;
-			}
-			.web-layout{
-				grid-template-columns: auto 200px;
-			}
-			.sidebar-share{
-				display: none;
-			}
-		}
-		@media (width<=640px){
-			.container{
-				max-width: 820px;
-			}
-			.web-layout{
-				grid-template-columns: 1fr;
-			}
-			.sidebar-share{
-				display: none;
-			}
-
-			aside{
-				margin-bottom: 1rem;
-			}
-		}
-		@media (width<=425px){
-			.container{
-				max-width: 375px;
-			}
-		} */
 		main {
-			background: #fff;
+			/* background: #fff; */
 			padding: 1rem;
+			padding-bottom: 3rem;
 		}
         .playlist{
             display: grid;
@@ -87,9 +58,10 @@
 			gap: 1rem;
         }
 		.album{
+			container-type: inline-size;
 			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			background-color: #191414;
+			grid-template-columns: auto 1fr;
+			background-color: #181818;
 			color: White;
 			border-radius: 5px;
 		}
@@ -97,16 +69,75 @@
 			width: 80px;
 			height: 80px;
 			background-color: black;
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
 		}
-		.album{
-			
+		h1{
+			color: white;
+		}
+		h2{
+			padding: 5px 12px;
+		}
+		#img1{
+			background-image: url("https://charts-static.billboard.com/img/2013/08/metro-boomin-nxb-344x344.jpg");
+			background-size: cover;
+		}
+		#img2{
+			background-image: url("https://64.media.tumblr.com/fe846a2d22c1415942a76c26c2bb46d2/adffb31d9369d6fc-33/s640x960/29267492a588dae32bc68c7e866418fb68017143.jpg");
+			background-size: cover;
+		}
+		#img3{
+			background-image: url("https://64.media.tumblr.com/32af0b3312141aff734273e9555018ed/tumblr_p50w2rG3ig1vzkjvvo1_1280.jpg");
+			background-size: cover;
+		}
+		#img4{
+			background-image: url("https://64.media.tumblr.com/48221550e5a06d01e1c94bee98c375e2/tumblr_p4cwh4HV511wk2bq8o8_500.jpg");
+			background-size: cover;
+		}
+		#img5{
+			background-image: url("https://i.scdn.co/image/ab6761610000e5eb24e41f491b129093a6fee383");
+			background-size: cover;
+		}
+		#img6{
+			background-image: url("https://i1.sndcdn.com/artworks-rM5NEnIb2zzsSHYt-2yR2Zg-t500x500.jpg");
+			background-size: cover;
+		}
+		#img7{
+			background-image: url("https://thesource.com/wp-content/uploads/2023/05/Fw15SQtaUAAOMAJ.jpeg");
+			background-size: cover;
+		}
+		#img8{
+			background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUVFBgREhISGBgSGBkSGBgYGBEYGBIYGBgZGRgYGBkcIS4lHB4rHxgYJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QHhISGjQhISExNDE0MTE0NDQxNDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ/NDQ0P//AABEIAOwA1gMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAADAAECBAUGB//EADwQAAIBAgQEBAQDBwQBBQAAAAECAAMRBBIhMQVBUWEicYGRBhMyoUKx0RQjUmJywfAHguHxshUkQ5Ki/8QAGAEBAQEBAQAAAAAAAAAAAAAAAAECAwT/xAAeEQEBAQADAQEAAwAAAAAAAAAAARECITFBEiJRYf/aAAwDAQACEQMRAD8A0HeDZ5Bng2edHnTZ5AvIFpEtIohaNmgi0a8AxaNmgrwtSkygMfxSBBpINK+aSDSCwGjU6t79osMhdlQfiNpKpRytl3OYjTtM29i9gaWdgliSdpU+IeDv4RUtZToV31l3Ah6bgi2bv3mjxRC2TNmLE5io2mLybkYuBTIoW5Nuu8uK0Dic7FvDcUwCSPw36+xgkrC+W+vSWXWbGgrQimU0eHR5pFtTCLKqVBtDo8KMBHCyKtJgwFaI0xJCSEADUAYN8KttQJctFaFZFTh9PmgimnUpAxQOPZoMtIlpEtOrJy0bNIExryCZMSyAM0eDYcvWRQL87eQvALgeFVHqrTy2LDNrsAOZ/wA5wfFbqchIurFTbbQkaTteBA/Mqswsaa5D2uSbf/mefYt7uzdST7zMXA7y9wnANWfIDbmT5TNvO/4JSpjDpVVGDHS49jc+8nK4SaNwbg1ND8y4Lrf8pnYIsyt+6UnO9RTbUjMdZe4nVFBCaZNyCSdwbzG4R8QMoFPKCBp5a9ZyrfS78svUfNTvlAYHoTCYnEKXVjyXY9ekinEmesyqLKV3tuwtpLGKoXIsv4bsehkoycbUIoMwWxqVEW211BvY9tDMxHBYsEFze3aa3HUApqF3TxNMvhdZCSzWAQFj3PaXyH02EZn0CkkX08odXsbHSZ9DHMhzgkNflsATF+3s7Fm9JqWs2NCliPGR1l5Kk5qniD+0EX0CD3mulaaRqI8MrzPpuSLjYb9oVKkC+rSYMpo8OrwqwI4gQ8c1LQCxQAxA6xQOHJkCYxMgTOrJy0a8jeODICLOt+B8KWrmpYgIh1toSSBa/vOSQz034QqqcMtraXVux7yVrjO2jjmUIxUgXFjpv5mef8U4UAjVBpl1t1noFWjnUoVBVj1101H5TlcRhqqjEBmsqplGgIO/31nPvWuTiM07f4O4ijUjhnNipLAnax/wzhbzrfg/ANlau1gh8IJH3+/2muXjHH1ucfwyPSsh0ykHfntMjhnDqaUguzoPECdSTznT8Qw6iwzaMDc+VrTmMSzpiUqC5t4Tpe9xYaTlnbpWhgaWd81gMgA0595pPUymwFyd+lrc5Rw2JC1UTKwFS+a4te3/AHCmqDWYEjKu/boJCOM4lg6j1nIqMoXVlF7MDqL+Wsrtw4gGzanW3abXE3cOz28IZrci479YOkiimGNlc3a52sdxESsLBoXbKNhueQmrTwSuctM/SD6mZeQ5WNMsLjUSvw7HPTYFG129+0172gfzylVyw12Pa01aNe+oM5xlq1XepUKjMxtaaWCQr4NSeVuc1EsdUiOlJah+ipcDzF9/YwCVpocZbLgcOn4swJHMWDE39Zzy1pUrZSrDJVmOleHSvA1kqQoeZa1odasKtNTBigg8UDjSZAmSaQM6smvHBkDEDIDoZ3PwOoZKiZyPFcjppuP85Tg0M6/4BxNq7If/AJE+66/3meU2Ncb27p/AmYa5dfPlOBf4genXqZ0z0qjHMh5A/wAP6TuahYsyKPCFvy1vfSc6nClxCO7AqCWWxsCpBI/OY3tuzVCnwbB1FOLps4pqfEliQG0JG17aibPB8aposTTVUYEoF/Eo2YjlymDgeF1aFGuHdwmoRQdHNtHt129pp/EmLfDJhloKM2Uplte4yrpp3lYXuLYhAieMHOt1At2v9jJcVohkR6drrZiQbEgTgk+KcNh6ufEVM7hSoSmM6oDyPIGDw3+p2HQtmw1dgfpANMW56gttM2XempXeOiOKRfwst3XXVjpMTjJz3+WwzKRUawIK5dhf0mE3+qmGZi7YOsG2VlNI5VH8pbeRHxtgXR1D1Kb1DrnRgLf1LcD3mbLL4NXH4h6tLOWAyJl2uSTrrbbzgMDWNSmtFmWye5mXR4orU3XD11fPZWCZW8P5iF4Vw6o9KrXTNajvqL7XOnPS0C/wx1JZiVshKkdBMTAUw1V8lrLmYEi4AvAYMsRUVVY38U2sDUoU6C01Y/MfWowF8oO4lvXSMWsihbjcnltN74NRBULPYsACAekyOMJSRLUyxObntbtB8JqsuapextYHmJfiOg+LeLpmCXAJ1yzn0qmwJ5wNaorP8xhnJNsx5dbSVe2Y6HsDHFatJWlmnVMo0z0EuUSek0yvUgx5S7RonmZWooebS/RpjuZlRqdJebRSxTpj+GPA4EvGJg2MgTO7KZjXkM8f5gkEgZpcFx/ya6VL6BrN5HQ/rMsGOGko9ewNTK9nqhjWYsgFrhbXt/naT4gxp0qoyrlsd9lzDVj73nB/BL/+4LEmyIT1tqLAdOc9HqYik1N85GW2Rwd9QLgjyM55jpLsYHBKZejlrVA6AZQb72nB/E3GMRjHajg1YUaRNP5mbK1Tk1nJ0XsuvXpO+rrhKWFdKJzLUDKBdjq1wTc6iwvOU+YtNAqIAFACqBtJuVvjx2dvOMbwCrTF3+WOwYn+0xaylTY2nR/E2OdnObTkJzLNfczctLIgWjFonEGZWcERypzKSCNiCQR6idv8KfHj0UbC1iMlY+Kpa7LcBTmHMWG84SK8lmmPbf8A1Ggt6NECzJnztswI2XreZeEw9Jg9QmooZSrKLAq/LflM3/TbjDVGTBuqHIc6u1rqi7KOpvOw/ZUfGuCyU78jazWG855nSVzlThr5FDAsSufw62HeVKNJ9VSwD+G55d53VenTQuKdVGsozEEaX5TzjGYw52yE2XQf3jsxu4bhmRBUcmy3KjcVCDrK1euHYsbDt0ElxLHvTw9MDUOptc/TfecuaxOhJlhmunSug3YQi8SQbazlqVQ312hqOnPeLScXUUuOA3yptC0OPs1wABlnOYamb6Am/QEzZ4ZwDEVLGnSYq2hJyqPuRMcuWfXScYO/xDUbY2tFNDDfA2IJNzTW3Uk39hFM/qN5xc2xkCYzGDLT2PIdjI3jEyJaQTDSQqQN4rwOv+BMSgxGV8o+YpUFjYXGtvM2nS8TcpQxVdPE2YAb2UjKoPtY+k8tRyNQSCNb8xNR/i8phv2EmxqMSznMxyk3N7An2vpM3j2uuw4piab06b03W2QMdRuTax6HQzmeI8XSkpsM7DWw5crnoO85biWKKPWpXqIaAbNdkIfKCNQospz5FGrfUZg4+u9RBUqP9TuuQXAQqqNnt1Oe1/5TM/nt2nL+ODcU4karFn+WOw1/8bzLZ+1ucG23nJ1qpLAknRUA7WQWmsTQyYxjl+oEYnpCmijXjwNb4V4i1DFUqiEAlghuL6ObfpPWMLTVMQ9as4v4W8emYfiAnkXw7hmqYqgigEmoh12spzMT2spnqnxahqYdHCNmpuc5tcIpuFueX4ZjlO2OTZ4PwujiK1avTBFJ7sBtckb+9z6zgOM4E0iyZgSztp0UHS8674NxVRMO1hmTOEc86a8zp5zmuKU6S4pyLugqBjr9S3BYA+4jE1R4riS6Ip0yi0z0pjqTOh4zUovULUkyo1sq/wANhz9ZUpWHISGq9OkOSMZdoYdydKfvD06wHOW6WIF95LF0XhmHqqfwCbuC4lUoqA9awZsoso3MysNihf1guKV8yJyyuDMXjL8Nrq6xcnMa1S5HJiPsIplYPGFxryEUfmf0uuKLSLNBB5Fnnqc0y0iWgy8iWhcFLRs0CWjZoB88q0yjYhQ3OpQpj+khS3uxJ9ZLPK1amxdHWwy5SSW5qxYEDLvrvfp01GNd6eXEY3G1FGWnWqU6YOz1TVLg25hAAbdSOhnH1qrO1mIOlgWKJoNtSQP+pt/EmIqVlzsUVA9R8i5goeq5diLkkm5+3IaTmSZn7rckyQb5Q5uvkviPv9P3g6g19hbewAsNeegjKul+kiWhUiZExrxryKeNFFA2vhes6VxWp6GmrDN/DnU0z6kM09FxfxKBQqUqZBGJVQ6sDenYWNj3H5Tk+FuiYNaa+J6rGo5K2yfSFUH8Qst7/wAxkbyMX1oYLitakGWk5UVBZgLEH32PeUy56xpBW1hBAx0hEOsDm1EMp1gHUy4h1lAGW0bxe0yL2HPi9Y3EnshP80ehzPcQPFj+6b+oSDT4fU8CnqIoPhh/dLFIOUV5AvBK8gXnoMGLxi8DnjF4MFLxs0CXkc0hgxeNngS8bPC41vr+XQVaZKo1U/MIVAz5hne4NwqAC1jq6zkscoDkB1e34lFlY9uom3gKH7TVaiTY5AFb+EKQWv8Ab2lDi3ChQOU1Fc9pltm5rDzg5JtpCUPGiikDxxIySm0DqqS5UVegA+0IDrMhuMDkh9SJpI9zcbEXEjGDZtZFTrIFtTGVtYBb+ISyn1SnfxCWaZ8cAqnUy1RPi9JTRtTLdA6yUaWHOrekrcWPgYfzCGwx8TekfFEWa/UTKLPBx+6WKH4Uwy6RSK4BXkWeDV5AtO64LnkS8HeRLQYMXkS8EWkc0GDF4i0CWjF4MM9ZkYujFSy5bjTTmPsJQqVSSSTvLlQZhaUaikHWRUIoo0ilFFFAUUUUBTc4PWuuU7r+Uw5a4fWCuCTYWIMJW+DvEh1MhTcEXBuDFTOpkZEB8cs0m8Upo3jh6TeIwDI2/nLtBtfSZqNv5y5RfxDyko0sM/jbyEBxioQpt2jYd/GfKQ4qbhvKT6NP4eqk09eseVfhxrIRHko4xG3kS0ihkLzq0IWkbyBMjeFELSOaQvGvAlmiLSBMa8AgaQrk2uBvfXe1v+4xaV3qE89Bp/zCIrvrCYnDlDYxqNTKwawNr2B1F7ED76+kJi8RnCknVRlPfveRVaNHEaAooooCjiNFAs4XEMhup05g7GauGxSnc2J5H+xmGpk1eEb1N/EYWnUGY6zFo4q3K/bn6S5hsQrXt7HeZqY0Kb6HzhlqeISlT2h6e8lMX6NcZzryk8ZUuG8pRpN45Zqv4WtIYtcJxIUWPSKUcLUJ9ooqY59DIXiUyN51bPeImRJkbyCV415G8a8oe8eQHQc9JrU8MqJrYk6sevRR2hLcZdXQa89v1gSlhrudh/czQancln/DoB33J9LgQeAofOrKhKgMbXY2UXNgSeQBNz2BhNULRMf09poYyiqeEMGy5gTYjWy238/tM6RYUUMiW8TDQAHzvsPX8pALfU7QqEUaEpoWIUczaBELCJTJF+Uu8QohAF/E32Ube5ixNlVUt9I1/mb/AD8pcTWe0Y6Gx5SdAXdQebD841c3diObH85FRBjhze4NvKMRoO8jA28BiMwsdx9+80Npy9NypBBsRrN3D4nMoPoR0MzYlWaT+Pzlt7ZTrM2mfFLLvpvILFAge0UDQItFDLAUyN4wMjebbSvGJkbxXgK8V414oFrAUyzeVvv/AMAn0mvSXO17eFNT58h7SjgjlpFubEgfl+sv1GyUwv4m8R9ZqMcvVbEUmqlglvCLknQSPDcCVqBWsTbObbAAaeusv0EyIqnd/G3lyEFTrZWqPucgA0JvfWwA7Lb1lTWfxxlDCmi2t4jte5Hbzv8A9QOFwgAzvsNbdP8An/iXcFhA372oblibba9W97wPF621Neep8u/rf2En+tb8Umu7WGw3tzJ6fYDsBGxYsQg/DofPp6frNKjTFKmXI1A0/qO3rB8IwuYmo2upA7nmYw1Xo8NY6toIZaYpnMN75F7E/U3oNPM9pfq1btlU6JsOpOkxq1bNUAGwIUd9dT6m5jw7o+MbNiAP4WUedtTKuNqZm+/vr+VpY3rOemb0v4b/AHlCo1yT1N5KsEoaXf8AhFh/UdB/c+kBCO+gUbDXzJ3P9oORSJiiEUBS7w2tlbKdm/OUpJTY3HLWKNzP44WpVvKdGrms3v2MIW1mMRZpVSV9YoPCnQ+cUDHvFeNeNNqe8V41414DxRooGrhhf5SdLufz/vLZHzKgHK+vkN5n4B7Fm6KEHrNXAU9GJNrrl995qMU9RszEjn4RbkJUqOSuUWuz+tlygemZgfT3vBwAx5ILepGw9PzEr0l8YFj+7AGtt7ZmPu5/+olQZkCLysosOgAHP85n4GlnZqzDS4Cg87bX8gJZ4pUuAgH1HKB25/bT/dLFOyaW+nQDvzP3gZvFnLMlJeWp7ltr+lpLF1sirRQ8hmI38h5yFA3d6zn6dvPlaAwvjcu3LWFExTZEtszaDqBzPtp6zOw31DtCY/EZ3JGw0H6wVA6zP1qTpbY2+a3U2H+6/wCsz5ZrucoXrqe9tBK0UhRRRSKUUQEUBRRRQLODq2YdDpNFzYzFmmWuqk8wJKlWcK28UFRfUxTIzYrxoptSjxooCvFGigXsBrp3vNepWyiw25zFw1TLrLOIr3H+dJqM31cOIBCoVbU3Y7DWzEX8r69pVq4hxlZbgsxJvrv4rfdvaGxpUDb8Kov+62bTygGrC1jyvY63Bbcwg2HcuxYn6V36XFzb3A9JZxlUIht0t6nn+fvKGDq2XNa1zfuTe8Hiq1xqecpnaFWpZQnmx7kysaxClRz3kKrXMHeZ1qQ0Nhlu0DD0Da5kKjiT4j20go53jQpRARRQHJjRRQFFFFAUtfO0UdBKsJAL84xoK8UmGFFFGlDxRooCiijGAcN4Y5a/tB8ohsZUXq7glbg/TmJP4tABbte/tIYs2HnKqnX0iquYTEvmfaMz39IGIRq4YmKKKRShAfDByR2gRiiigKKKKAooooCiiigKSBkY6wJRRRQP/9k=");
+			background-size: cover;
+		}
+		@container (width<280px){
+			h2{
+				font-size: 20px;
+				padding: 5px 12px;
+			}
+			.album{
+				display: grid;
+				grid-template-columns: repeat(1, 1fr);
+			}
+		}
+		@media (width<=1180px){
+			.playlist{
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+		@media (width<=640px){
+			.playlist{
+				display: grid;
+				grid-template-columns: repeat(1, 1fr);
+			}
 		}
 	</style>
 	<header>
 		<div class="container">
 			<div class="container-space">
 				<div class="header-inner">
-					<svg xmlns="http://www.w3.org/2000/svg" height="1.6em" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#191414}</style><path d="M248 8C111.1 8 0 119.1 0 256s111.1 248 248 248 248-111.1 248-248S384.9 8 248 8zm100.7 364.9c-4.2 0-6.8-1.3-10.7-3.6-62.4-37.6-135-39.2-206.7-24.5-3.9 1-9 2.6-11.9 2.6-9.7 0-15.8-7.7-15.8-15.8 0-10.3 6.1-15.2 13.6-16.8 81.9-18.1 165.6-16.5 237 26.2 6.1 3.9 9.7 7.4 9.7 16.5s-7.1 15.4-15.2 15.4zm26.9-65.6c-5.2 0-8.7-2.3-12.3-4.2-62.5-37-155.7-51.9-238.6-29.4-4.8 1.3-7.4 2.6-11.9 2.6-10.7 0-19.4-8.7-19.4-19.4s5.2-17.8 15.5-20.7c27.8-7.8 56.2-13.6 97.8-13.6 64.9 0 127.6 16.1 177 45.5 8.1 4.8 11.3 11 11.3 19.7-.1 10.8-8.5 19.5-19.4 19.5zm31-76.2c-5.2 0-8.4-1.3-12.9-3.9-71.2-42.5-198.5-52.7-280.9-29.7-3.6 1-8.1 2.6-12.9 2.6-13.2 0-23.3-10.3-23.3-23.6 0-13.6 8.4-21.3 17.4-23.9 35.2-10.3 74.6-15.2 117.5-15.2 73 0 149.5 15.2 205.4 47.8 7.8 4.5 12.9 10.7 12.9 22.6 0 13.6-11 23.3-23.2 23.3z"/></svg>
+					<svg xmlns="http://www.w3.org/2000/svg" height="1.6em" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#121212}</style><path d="M248 8C111.1 8 0 119.1 0 256s111.1 248 248 248 248-111.1 248-248S384.9 8 248 8zm100.7 364.9c-4.2 0-6.8-1.3-10.7-3.6-62.4-37.6-135-39.2-206.7-24.5-3.9 1-9 2.6-11.9 2.6-9.7 0-15.8-7.7-15.8-15.8 0-10.3 6.1-15.2 13.6-16.8 81.9-18.1 165.6-16.5 237 26.2 6.1 3.9 9.7 7.4 9.7 16.5s-7.1 15.4-15.2 15.4zm26.9-65.6c-5.2 0-8.7-2.3-12.3-4.2-62.5-37-155.7-51.9-238.6-29.4-4.8 1.3-7.4 2.6-11.9 2.6-10.7 0-19.4-8.7-19.4-19.4s5.2-17.8 15.5-20.7c27.8-7.8 56.2-13.6 97.8-13.6 64.9 0 127.6 16.1 177 45.5 8.1 4.8 11.3 11 11.3 19.7-.1 10.8-8.5 19.5-19.4 19.5zm31-76.2c-5.2 0-8.4-1.3-12.9-3.9-71.2-42.5-198.5-52.7-280.9-29.7-3.6 1-8.1 2.6-12.9 2.6-13.2 0-23.3-10.3-23.3-23.6 0-13.6 8.4-21.3 17.4-23.9 35.2-10.3 74.6-15.2 117.5-15.2 73 0 149.5 15.2 205.4 47.8 7.8 4.5 12.9 10.7 12.9 22.6 0 13.6-11 23.3-23.2 23.3z"/></svg>
 					<span>Spotify</span>
 				</div>
 			</div>
@@ -116,42 +147,42 @@
 		<div class="container-space">
 			<div class="web-layout">
 				<main>
-					<h1>Singer</h1>
+					<h1>Recently Played</h1>
                     <div class="playlist">
                         <div class="album">
-							<div class="img"></div>
+							<div class="img" id="img1"></div>
 							<h2>Metro Boomin</h2>
 						</div>
                         <div class="album">
-							<div class="img"></div>
+							<div class="img" id="img2"></div>
 							<h2>Travis Scott</h2>
 						</div>
 						<div class="album">
-							<div class="img"></div>
+							<div class="img" id="img3"></div>
 							<h2>Swae Lee</h2>
 						</div>
 						<div class="album">
-							<div class="img"></div>
+							<div class="img" id="img4"></div>
 							<h2>Lil Uzi Vert</h2>
 						</div>
                     </div>
-                    <h1>Style</h1>
+                    <h1>Made For You</h1>
                     <div class="playlist">
                         <div class="album">
-							<div class="img"></div>
-							<h2>Hip-Hop</h2>
+							<div class="img" id="img5"></div>
+							<h2>Future</h2>
 						</div>
                         <div class="album">
-							<div class="img"></div>
-							<h2>Rap</h2>
+							<div class="img" id="img6"></div>
+							<h2>Lil Wayne</h2>
 						</div>
 						<div class="album">
-							<div class="img"></div>
-							<h2>Electric</h2>
+							<div class="img" id="img7"></div>
+							<h2>Offset</h2>
 						</div>
 						<div class="album">
-							<div class="img"></div>
-							<h2>Lil Uzi Vert</h2>
+							<div class="img" id="img8"></div>
+							<h2>NAV</h2>
 						</div>
                     </div>
 				</main>
