@@ -57,18 +57,18 @@
         text-align: center;
     }
         #footer-box-left{
-            border-top: 1px solid white;
-            border-bottom: 1px solid white;
+            border-top: 1px solid rgba(255,255,255, .3);
+            border-bottom: 1px solid rgba(255,255,255, .3);
         }
         #footer-box-mid{
-            border-right: 1px solid white;
-            border-left: 1px solid white;
-            border-top: 1px solid white;
-            border-bottom: 1px solid white;
+            border-right: 1px solid rgba(255,255,255, .3);
+            border-left: 1px solid rgba(255,255,255, .3);
+            border-top: 1px solid rgba(255,255,255, .3);
+            border-bottom: 1px solid rgba(255,255,255, .3);
         }
         #footer-box-right{
-            border-top: 1px solid white;
-            border-bottom: 1px solid white;
+            border-top: 1px solid rgba(255,255,255, .3);
+            border-bottom: 1px solid rgba(255,255,255, .3);
         }
         .footer-box{
             padding-top: 50px;
@@ -86,6 +86,28 @@
         display: grid;
         grid-template-columns: repeat(2,1fr);
     }
+        .page2-box-left{
+            background-image: url("https://www.techzone.com.my/image/techzone/image/data/brands/HyperX%20Logo.png");
+            background-size: cover;
+        }
+        .page2-box-right{
+            padding-top: 300px;
+            padding-bottom: 300px;
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+            #page2-header{
+                color: white;
+                font-size: 50px;
+            }
+            #page2-quote{
+                color: #f50438;
+                font-size: 20px;
+            }
+            #page2-text{
+                color: white;
+                font-size: 20px;
+            }
 </style>
 <body>
     <div class="container">
@@ -110,7 +132,7 @@
             <footer>
                 <div id="footer-box-left" class="footer-box">
                     <div class="footer-header" id="footer-left">ADDRESS</div>
-                    <div class="footer-info">+66 245-900-13</div>
+                    <div class="footer-info">Thailand</div>
                 </div>
                 <div id="footer-box-mid" class="footer-box">
                     <div class="footer-header" id="footer-mid">CALL US</div>
@@ -118,7 +140,7 @@
                 </div>
                 <div id="footer-box-right" class="footer-box">
                     <div class="footer-header" id="footer-right">HOURS</div>
-                    <div class="footer-info">Monday to Friday<br>08:00 - 18:00 GMT +8</div>
+                    <div class="footer-info">Monday to Friday<br>08:00 - 18:00</div>
                 </div>
             </footer>	
 		</div>
@@ -126,8 +148,16 @@
     <div class="container">
 		<div class="container-space">
             <div class="page2">
-                <div class="page2-box-left">w</div>
-                <div class="page2-box-right">w</div>
+                <div class="page2-box-left"></div>
+                <div class="page2-box-right">
+                    <div id="page2-header" class="page2-text">Welcome to HyperX</div>
+                    <br>
+                    <div id="page2-quote"><i>Provider of gaming peripherals intended to serve the high-performance computer equipment segment</i></div>
+                    <br>
+                    <div id="page2-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo cupiditate, consectetur ullam unde maiores deserunt autem maxime, nam totam eligendi eveniet pariatur fugit, minus distinctio. Aliquam alias sint adipisci atque?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis nulla qui repellendus deserunt provident quod inventore placeat autem repudiandae tempore, earum, iusto temporibus. Magni eum, ipsam obcaecati accusantium facere pariatur?
+                    </div>
+                </div>
             </div>
         </div>
     </div>
