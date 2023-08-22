@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>HyperX</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        background-color: #181818;
+        font-family: 'Bebas Neue', sans-serif;
+    }
+    *{
+			box-sizing: border-box;
+	}
+    .container{
+		width: 100%;
+		padding: 0;
+		/* max-width: 1500px; */
+		margin: auto;
+	}
+	.container-space{
+		padding: 0 1rem;
+	}
+    .header-inner{
+        display: flex;/*		justify-content: center;*/
+		align-items: center;
+		gap: 1rem;
+        font-size: 30px;
+        color: white;
+    }
+    .body{
+        text-align: center;
+        position: relative;
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }
+        #brand-name{
+            font-size: 150px;
+            color: #f50438;
+        }
+        #brand-exp{
+            font-size: 40px;
+            color: #f50438;
+        }
+        #brand-quote    {
+            font-size: 20px;
+            color: white;
+        }
+    footer{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        text-align: center;
+    }
+        #footer-box-left{
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+        }
+        #footer-box-mid{
+            border-right: 1px solid white;
+            border-left: 1px solid white;
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+        }
+        #footer-box-right{
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+        }
+        .footer-box{
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        .footer-header{
+            color: #f50438;
+            font-size: 20px;
+        }
+        .footer-info{
+            color: white;
+            font-size: 25px;
+        }
+    .page2{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+</style>
+<body>
+    <div class="container">
+		<div class="container-space">
+            <div class="header-inner">
+                <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#f50438}</style><path d="M192 64C86 64 0 150 0 256S86 448 192 448H448c106 0 192-86 192-192s-86-192-192-192H192zM496 168a40 40 0 1 1 0 80 40 40 0 1 1 0-80zM392 304a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zM168 200c0-13.3 10.7-24 24-24s24 10.7 24 24v32h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H216v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V200z"/></svg>
+                <div>HyperX</div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+		<div class="container-space">
+                <div class="body">
+                    <div id="brand-name">HYPERX</div>
+                    <div id="brand-exp">GAMING PRODUCT</div>
+                    <div id="brand-quote">We develop gaming products for all types of gamers</div>
+                </div>
+        </div>
+    </div>
+	<div class="container">
+		<div class="container-space">
+            <footer>
+                <div id="footer-box-left" class="footer-box">
+                    <div class="footer-header" id="footer-left">ADDRESS</div>
+                    <div class="footer-info">+66 245-900-13</div>
+                </div>
+                <div id="footer-box-mid" class="footer-box">
+                    <div class="footer-header" id="footer-mid">CALL US</div>
+                    <div class="footer-info">+66 245-900-13</div>
+                </div>
+                <div id="footer-box-right" class="footer-box">
+                    <div class="footer-header" id="footer-right">HOURS</div>
+                    <div class="footer-info">Monday to Friday<br>08:00 - 18:00 GMT +8</div>
+                </div>
+            </footer>	
+		</div>
+	</div>
+    <div class="container">
+		<div class="container-space">
+            <div class="page2">
+                <div class="page2-box-left">w</div>
+                <div class="page2-box-right">w</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
