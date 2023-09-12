@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Web Dataset 1</title>
+</head>
+<body>
+	<style type="text/css">
+		.card{
+			padding: 1rem;
+			border: 1px solid navy;
+			margin-bottom: 1rem;
+		}
+	</style>
+
+	<div>
+		<h1>ข้อมูลของ <span id="user_fullname">ผู้ใช้</span></h1>
+		<h2 id="user_fname">ชื่อจริง</h2>
+		<h3 id="user_lname">นามสกุล</h3>
+		<h3 id="___________">จังหวัด</h3>
+		<h3 id="___________">อายุ</h3>
+	</div>
+
+	<div id="all_user">
+		
+	</div>
+
+	<button onclick="renderUserCard()">
+		ดูสมาชิก
+	</button>
+
+	<script type="text/javascript">
+		let users = [
+		{
+			fname: 'สมชาย',
+			lname: 'บ้านหนองโพธิ์',
+			province: 'สกลนคร',
+			age: '43',
+		},
+		{
+			fname: 'สมศักดิ์',
+			lname: 'วงษ์พานิชย์',
+			province: 'สงขลา',
+			age: '23',
+		},
+		{
+			fname: 'มานะ',
+			lname: 'แสนดีใจ',
+			province: 'ระยอง',
+			age: '25',
+		},
+		{
+			fname: 'กิตติยา',
+			lname: 'ค้าขาย',
+			province: 'เขียงใหม่',
+			age: '35',
+		},
+		]
+
+		function renderUserCard(){
+			let html = ``
+			let c = 0;
+			for(let i of users){
+				html += `<div class="card" 
+				onclick="selectUser(this)"
+				data-item="${c}"><h2>${i.fname}</h2><h3>${i.lname}</h3></div>`
+				c++;
+			}
+			document.querySelector('#all_user').innerHTML = html
+		}
+		
+		function selectUser(el){
+			let data = el.dataset
+			document.querySelector('#user_fullname').innerText = users[data.item].fname+ ' '+users[data.item].lname
+
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+

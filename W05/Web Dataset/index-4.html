@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Web Dataset 1</title>
+</head>
+<body>
+	<style type="text/css">
+		.card{
+			font-size: 10px;
+			padding: 1em;
+			border: 1px solid navy;
+			margin-bottom: 1rem;
+		}
+		.card[data-select="1"]{
+			font-size: 1rem;
+			border-width: 4px;
+		}
+		.card[data-gate="or"]{
+			color: hsl(80,100%,30%);
+			border-color: hsl(80,100%,40%);
+			background: hsl(80,100%,80%);
+		}
+		.is-selecting {
+			display: none;
+		}
+		.card[data-select="1"] .is-selecting {
+			display: block;
+		}
+	</style>
+
+	<div>
+		<h1>ข้อมูลของ <span id="user_fullname">ผู้ใช้</span></h1>
+		<h2 id="user_fname">ชื่อจริง</h2>
+		<h3 id="user_lname">นามสกุล</h3>
+		<h3 id="user_province">จังหวัด</h3>
+		<h3 id="user_age">อายุ</h3>
+	</div>
+
+	<div id="all_user">
+		
+	</div>
+
+	<button onclick="renderUserCard()">
+		ดูสมาชิก
+	</button>
+
+	<script type="text/javascript">
+		let users = [
+		{
+			fname: 'สมชาย',
+			lname: 'บ้านหนองโพธิ์',
+			province: 'สกลนคร',
+			age: '43',
+			gate:"and"
+		},
+		{
+			fname: 'สมศักดิ์',
+			lname: 'วงษ์พานิชย์',
+			province: 'สงขลา',
+			age: '23',
+			gate:"or"
+		},
+		{
+			fname: 'มานะ',
+			lname: 'แสนดีใจ',
+			province: 'ระยอง',
+			age: '25',
+			gate:"nor"
+		},
+		{
+			fname: 'กิตติยา',
+			lname: 'ค้าขาย',
+			province: 'เขียงใหม่',
+			age: '35',
+			gate:"not"
+		},
+		{
+			fname: 'สิริกาน',
+			lname: 'ตาลโตนด',
+			province: 'ปทุมธานี',
+			age: '24',
+			gate:"or"
+		},
+		]
+
+		function renderUserCard(){
+			let html = ``
+			let c = 0;
+			for(let i of users){
+				html += `<div class="card" 
+				onclick="selectUser(this)"
+				data-item="${c}" 
+				data-gate="${i.gate}"
+				data-select="0"
+				>
+				<div class="is-selecting">กำลังดู</div>
+				<h2>${i.fname}</h2><h3>${i.lname}</h3>
+				</div>`
+				c++;
+			}
+			document.querySelector('#all_user').innerHTML = html
+		}
+		
+		function selectUser(el){
+			let data = el.dataset
+			let card = document.querySelectorAll('.card[data-select="1"]')
+			for(let i of card){
+				i.dataset.select = 0
+			}
+			el.dataset.select = 1
+			document.querySelector('#user_fullname').innerText = users[data.item].fname+ ' '+users[data.item].lname
+			document.querySelector('#user_fname').innerText = users[data.item].fname
+			document.querySelector('#user_lname').innerText = users[data.item].lname
+			document.querySelector('#user_province').innerText = users[data.item].province
+			document.querySelector('#user_age').innerText = users[data.item].age
+
+		}
+	</script>
+
+	<style type="text/css">
+		.menu .menu-item{
+			display: none;
+		}
+		.menu[data-toggle="1"] .menu-item{
+			display: block;
+		}
+		.menu[data-toggle="-1"] .toggle-hide{
+			display: none;
+		}
+		.menu[data-toggle="1"] .toggle-show{
+			display: none;
+		}
+	</style>
+
+	<div class="menu" data-toggle="-1">
+		<div class="toggle" onclick="document.querySelector('.menu').dataset.toggle*=-1">
+			<div class="toggle-show">Menu</div>
+			<div class="toggle-hide">Close</div>
+		</div>
+		<div class="menu-item">
+			<ul>
+				<li>Menu 1</li>
+				<li>Menu 2</li>
+				<li>Menu 3</li>
+				<li>Menu 4</li>
+				<li>Menu 5</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
