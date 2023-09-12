@@ -2,19 +2,201 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    <style type="text/css">
+	<style type="text/css">
+		.card{
+			font-size: 10px;
+			padding: 1em;
+			border: 2px solid #1db954;
+			margin-bottom: 1rem;
+			color: white;
+			background-color: #212121;
+		}
+		.card[data-select="1"]{
+			font-size: 1rem;
+			border-width: 4px;
+		}
+		.card[data-album="HEROES & VILLAINS"]{
+			color: black;
+			background-color: white;
+		}
+		.is-selecting {
+			display: none;
+			color: #1db954;
+		}
+		.card[data-select="1"] .is-selecting {
+			display: block;
+		}
+		*{
+			font-family: 'PT Sans', sans-serif;
+		}
+		body{
+			background-color: #121212;
+		}
+		.header{
+			color: #1db954;
+		}
+		.header-inner{
+			color: white;
+		}
+		button{
+			background-color: #1db954;
+			color: #121212;
+		}
+		#divider{
+			color: #1db954;
+		}
+		.info-box{
+			display: grid;
+			grid-template-columns: 240px auto;
+			grid-template-rows: 240px;
+			gap: 20px;
+			padding-bottom: 20px;
+		}
+		#song-cover{
+			background-image: url("https://i.scdn.co/image/ab6761610000e5ebdf9a1555f53a20087b8c5a5c");
+			background-size: cover;
+			width: 240px;
+			height: 240px;
+		}
+	</style>
+    <div>
+		<h1 class="header">Produced By <span id="divider">:</span> <span class="header-inner">Metro Boomin</span></h1>
+		<div class="info-box">
+			<div class="info-left">
+				<div id="song-cover"></div>
+			</div>
+			<div class="info-right">
+				<h2 class="header">Song name <span id="divider">:</span> <span class="header-inner" id="song_name"></span></h2>
+				<h3 class="header">Collaborative with <span id="divider">:</span> <span class="header-inner" id="song_collab"></span></h3>
+				<h3 class="header">Album <span id="divider">:</span> <span class="header-inner" id="song_album"></span></h3>
+				<h3 class="header">Total play count <span id="divider">:</span> <span class="header-inner" id="song_count"></span></h3>
+				<h3 class="header">Song length <span id="divider">:</span> <span class="header-inner" id="song_length"></span></h3>
+			</div>
+		</div>
+	</div>
 
-    </style>
-    <div class="card"
-    data-item="0"
-    data-="">
-        <h2>สมชาย</h2>
-        <h3></h3>
-    </div>
+	<div id="all_user">
+		
+	</div>
+
+	<button onclick="renderUserCard()">
+		See track
+	</button>
+	<script type="text/javascript">
+		let songs = [
+		{
+			song_name: 'Creepin',
+			song_collab: 'The Weeknd & 21 Savage',
+			song_album: 'HEROES & VILLAINS',
+			song_count: '943,717,875',
+			song_length: '3:41',
+		},
+		{
+			song_name: 'Too Many Nights',
+			song_collab: 'Don Toliver & Future',
+			song_album: 'HEROES & VILLAINS',
+			song_count: '349,459,066',
+			song_length: '3:19',
+		},
+		{
+			song_name: 'Trance',
+			song_collab: 'Travis Scott & Young Thug',
+			song_album: 'HEROES & VILLAINS',
+			song_count: '335,813,863',
+			song_length: '3:14',
+		},
+		{
+			song_name: 'Superhero',
+			song_collab: 'Future & Chris Brown',
+			song_album: 'HEROES & VILLAINS',
+			song_count: '448,100,113',
+			song_length: '3:02',
+		},
+		{
+			song_name: 'Glock In My Lap',
+			song_collab: '21 Savage',
+			song_album: 'SAVAGE MODE II',
+			song_count: '389,336,347',
+			song_length: '3:13',
+		},
+		]
+
+		function renderUserCard(){
+			let html = ``
+			let c = 0;
+			for(let i of songs){
+				html += `<div class="card" 
+				onclick="selectUser(this)"
+				data-item="${c}" 
+				data-select="0"
+				data-album="${i.song_album}">
+				<div class="is-selecting">Listening to</div>
+				<h2>${i.song_name}</h2><h3>${i.song_collab}</h3>
+				</div>`
+				c++;
+			}
+			document.querySelector('#all_user').innerHTML = html
+		}
+		
+		function selectUser(el){
+			let data = el.dataset
+			let card = document.querySelectorAll('.card[data-select="1"]')
+			for(let i of card){
+				i.dataset.select = 0
+			}
+			el.dataset.select = 1
+			// document.getElementById('song_cover').style.backgroundImage = "url('https://lastfm.freetls.fastly.net/i/u/500x500/2e8e2f18f90297fa60c4ff6fb36f1116.jpg')"
+			// ทำไม่ได้ T^T
+			document.querySelector('#song_name').innerText = songs[data.item].song_name
+			document.querySelector('#song_collab').innerText = songs[data.item].song_collab
+			document.querySelector('#song_album').innerText = songs[data.item].song_album
+			document.querySelector('#song_count').innerText = songs[data.item].song_count
+			document.querySelector('#song_length').innerText = songs[data.item].song_length
+
+		}
+	</script>
+
+	<style type="text/css">
+		.menu{
+			margin-top: 10px;
+		}
+		.menu .menu-item{
+			display: none;
+		}
+		.menu[data-toggle="1"] .menu-item{
+			display: block;
+		}
+		.menu[data-toggle="-1"] .toggle-hide{
+			display: none;
+		}
+		.menu[data-toggle="1"] .toggle-show{
+			display: none;
+		}
+		.toggle, .menu-item{
+			color: #1db954;
+		}
+	</style>
+
+	<div class="menu" data-toggle="-1">
+		<div class="toggle" onclick="document.querySelector('.menu').dataset.toggle*=-1">
+			<div class="toggle-show">Playlist</div>
+			<div class="toggle-hide">Close</div>
+		</div>
+		<div class="menu-item">
+			<ul>
+				<li>HEROES & VILLAINS</li>
+				<li>SPIDER-MAN: ACROSS THE SPIDER VERSE</li>
+				<li>SAVAGE MODE II</li>
+
+			</ul>
+		</div>
+	</div>
 </body>
 </html>
